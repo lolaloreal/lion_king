@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>travels</title>
+    </head>
+    <body>
+        <h1>hello {{ username }}</h1>
+        {% if messages %}
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <h3>these are your plans</h3>
+        <hr>
+        {% if trips %}
+            {% for trip in trips %}
+                <!-- <p>destination: {{ trip.destination }} username: {{ trip.username }} plan: {{ trip.plan }} travel start date: {{ trip.start_date }} travel end date: {{ trip.end_date }}</p> -->
+        <table style="width:70%">
+          <tr>
+            <th>username:</th>
+            <th>destination:</th>
+            <th>plan:</th>
+            <th>travel start date:</th>
+            <th>travel end date:</th>
+            <!-- <th>link to page: </th> -->
+          </tr>
+          <tr>
+              <th>{{ trip.username }}</th>
+              <th><a href="destination">{{ trip.destination }}</a></th>
+              <th>{{ trip.plan }}</th>
+              <th>{{ trip.start_date }}</th>
+              <th>{{ trip.end_date }}</th>
+              <!-- <th><a href="destination">check it out</a></th> -->
+          </tr>
+        </table>
+            {% endfor %}
+        {% endif %}
+
+        <h3>all user's plans</h3>
+        <hr>
+        {% if trips %}
+            {% for trip in trips %}
+                <!-- <p>destination: {{ trip.destination }} username: {{ trip.username }} plan: {{ trip.plan }} travel start date: {{ trip.start_date }} travel end date: {{ trip.end_date }}</p> -->
+        <table style="width:70%">
+          <tr>
+            <th>username:</th>
+            <th>destination:</th>
+            <th>plan:</th>
+            <th>travel start date:</th>
+            <th>travel end date:</th>
+            <th>join:</th>
+            <!-- <th>link to page: </th> -->
+          </tr>
+          <tr>
+              <th>{{ trip.username }}</th>
+              <th><a href="destination">{{ trip.destination }}</a></th>
+              <th>{{ trip.plan }}</th>
+              <th>{{ trip.start_date }}</th>
+              <th>{{ trip.end_date }}</th>
+              <th><a href="destination/add">make join function</a></th>
+              <!-- <th><a href="destination">check it out</a></th> -->
+          </tr>
+        </table>
+            {% endfor %}
+        {% endif %}
+        <a href="travel_add">add a travel plan</a>
+    </body>
+</html>

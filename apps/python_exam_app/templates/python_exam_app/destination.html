@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>destinations</title>
+    </head>
+    <body>
+        <h1>where we goin</h1>
+        {% if trip %}
+            {% for trip in trip %}
+
+        <h3>{{ trip.destination }}</h3>
+            <p>planned by: {{ trip.username }}</p>
+            <p>plan: {{ trip.plan }}</p>
+            <p>travel start date: {{ trip.start_date }}</p>
+            <p>travel end date: {{ trip.end_date }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <h3>other people are suppossed to come, but I guess not</h3>
+
+        <a href="{% url 'python_exam:index' %}">back to homepage</a>
+        <a href="travel_add">add a travel plan</a>
+        <a href="{% url 'python_exam:logout' %}">logout</a>
+
+    </body>
+</html>

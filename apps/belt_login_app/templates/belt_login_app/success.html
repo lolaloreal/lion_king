@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>success</title>
+    </head>
+    <body>
+        <h1>success and stuff {{first_name}}</h1>
+        {% if messages %}
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+        <!-- {% if friends %}
+            {% for user in users %}
+                <p>{{ user.first_name }}</p>
+            {% endfor %}
+        {% endif %} -->
+        <form action="/" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="homepage">
+        </form>
+    </body>
+</html>
